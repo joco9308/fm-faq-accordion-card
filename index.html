@@ -19,7 +19,7 @@
     </header>
     <section class="faq">
       <h1>FAQ</h1>
-      <section>
+      <div>
         <div class="accordion">
           <div class="accordion-summary">How many team members can I invite?</div>
           <p class="accordion-content">
@@ -28,7 +28,7 @@
           </p>
         </div>
         
-        <div class="accordion">
+        <div class="accordion" open>
           <div class="accordion-summary">What is the maximum file upload size?</div>
           <p class="accordion-content">
             No more than 2GB. All files in your account must fit your allotted storage space.
@@ -57,11 +57,11 @@
           </p>
         </div>
         
-      </section>
+      </div>
     </section>
   </main>
 
-  <script>
+  <script type="text/javascript">
     const accordionSummaryElements = document.getElementsByClassName('accordion-summary');
     for ( summary of accordionSummaryElements) {
       summary.addEventListener('click', e => {

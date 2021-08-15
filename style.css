@@ -71,6 +71,7 @@ main {
     border-radius: 20px;
     display: grid;
     grid-template-columns: 1fr;
+    box-shadow: 0 30px 40px rgb(0 0 0 / 20%);
 }
 .faq {
     width: 100%;
@@ -169,7 +170,7 @@ main {
         height: 100%;
         align-items: center;
         background: url(images/bg-pattern-desktop.svg) no-repeat;
-        background-position: right 85px bottom 50%
+        background-position: right 85px bottom calc(50% + 60px);
     }
     .box {
         display: inline;
