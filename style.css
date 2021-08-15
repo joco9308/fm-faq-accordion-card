@@ -1,0 +1,190 @@
+@font-face {
+    font-family: 'Kumbh Sans';
+    src: url('fonts/KumbhSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Kumbh Sans';
+    src: url('fonts/KumbhSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+:root {
+    /* Primary */
+    /* Text */
+    --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+
+    /** Gradient **/
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+
+    /* Neutral */
+    /* Text */
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+
+    /* Dividers */
+    --light-grayish-blue: hsl(240, 5%, 91%);
+
+    --shadow-color: hsla(240, 73%, 65%, 10%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    color: var(--very-dark-grayish-blue);
+    font-family: 'Kumbh Sans';
+    font-size: 12px;
+    min-height: 100%;
+}
+
+body {
+    background: linear-gradient(to bottom, var(--soft-violet), var(--soft-blue)) no-repeat;
+    background-size: cover;
+    padding: 150px 25px;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    margin-right: 25px;
+    text-align: center;
+    margin-top: -108px;
+    background: url(images/bg-pattern-mobile.svg) no-repeat;
+    background-position: bottom 0px left 45px;
+    padding-bottom: 10px;
+}
+
+main {
+    background-color: #fff;
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.faq {
+    width: 100%;
+    padding: 0 25px 50px 25px;
+}
+.faq > h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 20px;
+}
+.desktop-header, .box {
+    display: none;
+}
+.accordion {
+    border-bottom: 1px solid var(--light-grayish-blue);
+}
+
+.accordion-summary {
+    padding: 15px 15px 15px 0;
+    position: relative;
+    display: flex;
+    cursor: pointer;
+}
+.accordion-summary:hover {
+    color: var(--soft-red);
+}
+
+.accordion-summary::after {
+    content: '';
+    background: url(images/icon-arrow-down.svg) no-repeat;
+    width: 10px;
+    height: 7px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transition: transform 200ms ease-out;
+}
+
+.accordion[open] .accordion-summary {
+    border-color: transparent;
+    font-weight: 700;
+    color: var(--very-dark-desaturated-blue);
+}
+
+.accordion[open] .accordion-summary::after {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    display: none;
+    padding: 0 15px 15px 0;
+    color: var(--dark-grayish-blue);
+}
+
+.accordion[open] .accordion-content {
+    display: block;
+}
+
+
+@media only screen and (min-width: 1440px) {
+    html {
+        height: 100%;
+    }
+    body {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .faq {
+        padding: 75px 100px 75px 25px;
+    }
+    
+    .faq > h1 {
+        text-align: start;
+        margin: 0;
+        margin-bottom: 25px;
+    }
+    
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    header {
+        margin: 0;
+        position: relative;
+        background: none;
+        padding-bottom: 0;
+    }
+
+    .desktop-header {
+        display: flex;
+        overflow: hidden;
+        height: 100%;
+        align-items: center;
+        background: url(images/bg-pattern-desktop.svg) no-repeat;
+        background-position: right 85px bottom 50%
+    }
+    .box {
+        display: inline;
+        position: absolute;
+        top: 100px;
+        bottom: 0;
+        left: -125px;
+        margin: auto;
+        z-index: 10;
+    }
+    .desktop-header img {
+        width: 100%;
+        transform: translateX(-85px);
+    }
+    .mobile-header {
+        display: none;
+    }
+}
