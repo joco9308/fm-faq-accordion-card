@@ -28,7 +28,7 @@
           </p>
         </div>
         
-        <div class="accordion" open>
+        <div class="accordion open">
           <div class="accordion-summary">What is the maximum file upload size?</div>
           <p class="accordion-content">
             No more than 2GB. All files in your account must fit your allotted storage space.
@@ -61,15 +61,15 @@
     </section>
   </main>
 
-  <script type="text/javascript">
+  <script>
     const accordionSummaryElements = document.getElementsByClassName('accordion-summary');
     for ( summary of accordionSummaryElements) {
       summary.addEventListener('click', e => {
         const accordion = e.currentTarget.parentNode;
-        if (accordion.getAttribute('open')) {
-          accordion.removeAttribute('open');
+        if (accordion.classList.contains('open')) {
+          accordion.classList.remove('open');
         } else {
-          accordion.setAttribute('open', true);
+          accordion.classList.add('open');
         }
       })
     }
