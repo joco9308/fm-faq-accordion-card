@@ -123,8 +123,8 @@ main {
 }
 
 .accordion-content {
+    margin: 0 15px 15px 0;
     display: none;
-    padding: 0 15px 15px 0;
     color: var(--dark-grayish-blue);
 }
 
